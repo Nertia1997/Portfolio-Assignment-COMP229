@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 //Route for the About Me Page
 router.get('/aboutMe', function(req, rest, next){
-  rest.render('aboutMe', {title: 'About Me'})
+  rest.render('aboutMe', {title: 'About Nicholas Harris'})
 });
 
 //Route for the Projects Page
