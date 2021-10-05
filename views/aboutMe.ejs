@@ -6,13 +6,36 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <img src="./images/Me.jpg" alt="Photo of Nicholas Harris" width="400" height="500">
-    <p>My name is Nicholas Harris, I am in my second year of Software Engineering Technology - AI at Centennial College and I am 24 years old. I love playing video games, cooking, 
-    going for hikes, and working on hobby projects in my free time. Before coming to Centennial, I completed an Honours Bachelor of Arts in English with a minor in Philosophy.</p>
-    <p>My technical skills include object-oriented programming in C# and Java, AI programming in Python, web development using tools such as node.js, JavaScript, and JSON, experience
-    with databases such as Oracle SQL, and exposure to bash scripting in Linux.</p>
-    <a href="./Assets/resume.pdf" type="application/pdf" target="blank">Resume</a> <%# Question 1 ) E) A copy of my resume via a link to the pdf. %>
-<!DOCTYPE html>
+    <div id="allPage">
+      <table>
+        <tr>
+          <td colspan="2">
+            <img src="./images/Sylvoon.jpg" alt="Website Logo" title="Website Logo" id="logo">
+          </td>
+          <td colspan="2">
+            <h2><a href="./">Home</a><h2>
+          </td>
+          <td colspan="2">
+            <h2><a href="./projects">Projects</a><h2>
+          </td>
+          <td colspan="2">
+            <h2><a href="./services">Services</a><h2>
+          </td>
+          <td colspan="2">
+            <h2><a href="./aboutMe">About Me</a><h2>
+          </td>
+          <td colspan="2">
+            <h2><a href="./contact">Contact Me</a><h2>
+          </td>
+        </tr>
+      </table>
+      <h1><%= title %></h1>
+      <img src="./images/Me.jpg" alt="Photo of Nicholas Harris" width="400" height="500" title="Nicholas Harris">
+      <p>My name is Nicholas Harris, I am in my second year of Software Engineering Technology - AI at Centennial College and I am 24 years old. I love playing video games, cooking, 
+      going for hikes, and working on hobby projects in my free time. Before coming to Centennial, I completed an Honours Bachelor of Arts in English with a minor in Philosophy.</p>
+      <p>My technical skills include object-oriented programming in C# and Java, AI programming in Python, web development using tools such as node.js, JavaScript, and JSON, experience
+      with databases such as Oracle SQL, and exposure to bash scripting in Linux.</p>
+      <a href="./Assets/resume.pdf" type="application/pdf" target="blank">Resume</a> <%# Question 1 ) E) A copy of my resume via a link to the pdf. %>
+    </div>
   </body>
 </html>

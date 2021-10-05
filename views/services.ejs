@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta content="en-us" http-equiv="Content Language" />
+    <meta content="text/html; charset-utf-8" http-equiv="Content-Type" />
+    <meta content="COMP229, Assignment#1, Nicholas Harris, Web Development, HTML, CSS, JavaScript, EJS, Express, Node.JS, JSON" name="keywords" />
+    <meta content="This is the first assignment for COMP229 by Nicholas Harris." name="description" /> 
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div id="allPage">
+      <table>
+        <tr>
+          <td colspan="2">
+            <img src="./images/Sylvoon.jpg" alt="Website Logo" title="Website Logo" id="logo">
+          </td>
+          <td colspan="2">
+            <h2><a href="./">Home</a><h2>
+          </td>
+          <td colspan="2">
+            <h2><a href="./projects">Projects</a><h2>
+          </td>
+          <td colspan="2">
+            <h2><a href="./services">Services</a><h2>
+          </td>
+          <td colspan="2">
+            <h2><a href="./aboutMe">About Me</a><h2>
+          </td>
+          <td colspan="2">
+            <h2><a href="./contact">Contact Me</a><h2>
+          </td>
+        </tr>
+      </table>
+      <h1><%= title %></h1>
+      <p>Welcome to <%= title %></p>
+    </div>
   </body>
 </html>

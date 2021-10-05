@@ -6,3 +6,26 @@ body {
 a {
   color: #00B7FF;
 }
+
+#logo{
+  border-radius: 50%;
+  height: 80px;
+  width: 100px;
+}
+
+#allPage{
+  width: 980px;
+  margin: auto;
+  text-align: center;
+  font-family: Arial, Halvetica, sans-serif;
+}
+
+table {
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px 5px #808080;
+  border: medium solid #F8F8FF;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #F8F8FF;
+}
