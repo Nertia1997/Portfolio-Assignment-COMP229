@@ -1,3 +1,6 @@
+/*This is the javascript I used for the contact me page. It includes some validating to ensure the first 3 fields 
+are properly filled and then an onclick to redirect the user to the home page.*/
+
 function validateEmail() {
     let regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     let emailInput = document.getElementById("email");
@@ -66,7 +69,7 @@ function verifyValues() {
     validateEmail();
     validateFirstName();
     validateLastName();
-    if(validateLastName() == true & validateFirstName() == true & validateEmail()){
+    if(validateLastName() == true & validateFirstName() == true & validateEmail()){ //If the fields are filled properly, then it will redirect the user to the home page on send.
         location.href = "./";
     }
 }
