@@ -18,6 +18,7 @@ a {
   margin: auto;
   text-align: center;
   font-family: Arial, Halvetica, sans-serif;
+  line-height: 0.5em;
 }
 
 table {
@@ -32,4 +33,12 @@ table {
 
 ul {
   text-align: left;
+}
+
+input:invalid{
+  background: rgb(255,233,233);
+}
+
+.errorMessage{
+  color: red;
 }

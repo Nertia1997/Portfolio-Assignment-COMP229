@@ -8,7 +8,7 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <body>
+  <body onload="">
     <div id="allPage">
       <table>
         <tr>
@@ -32,8 +32,49 @@
           </td>
         </tr>
       </table>
-      <h1><%= title %></h1>
-      <p>Welcome to <%= title %></p>
+      <div id="style">
+      <br>
+      <form>
+        <table>
+          <tr>
+            <td>
+               <h2>Contact Me</h2>
+           </td>
+          </tr>
+          <tr>
+            <td>
+              <h3>Please complete all the fields below:</h3>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="FName">First Name:<input type="text" style="width: 10em" id="firstName" placeholder="Ex: Nicholas" tabindex="1" required /></label>
+              <p id="firstNameError" class="errorMessage"></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="LName">Last Name:<input type="text" style="width: 10em" id="lastName" placeholder="Ex: Harris" tabindex="3" required /></label>
+              <p id="lastNameError" class="errorMessage"></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="Email">Email:<input type="email" style="width: 12em" id="email" placeholder="Ex: yourname@gmail.com" tabindex="5" required /></label>
+              <p id="emailError" class="errorMessage"></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button type="button" name="Send" id="send">Send Email</button>
+              <button type="reset" name="Clear Form" id="clearForm">Clear Form</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+      </div>
+      <br />
     </div>
+    <script src="./javascripts/assignment1.js"></script>
   </body>
 </html>
