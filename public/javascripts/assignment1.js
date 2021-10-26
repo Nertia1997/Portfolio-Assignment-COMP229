@@ -70,7 +70,7 @@ function verifyValues() {
     validateFirstName();
     validateLastName();
     if(validateLastName() == true & validateFirstName() == true & validateEmail()){ //If the fields are filled properly, then it will redirect the user to the home page on send.
-        location.href = "./";
+        location.href = "/";
     }
 }
 let send = document.getElementById("send");
