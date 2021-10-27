@@ -11,8 +11,10 @@
                     <th>Contact Name</th>
                     <th>Contact Number</th>
                     <th>Email Address</th>
-                    <th></th>
-                    <th></th>
+                    <% if(typeof displayName == 'string' && displayName) { %>
+                        <th></th>
+                        <th></th>
+                    <% } %>
                 </tr>
 
                 <!-- Repeatable Template Row -->
@@ -21,8 +23,10 @@
                         <td><%= ContactList[count].contact_name %></td>
                         <td><%= ContactList[count].contact_number %></td>
                         <td><%= ContactList[count].email %></td>
-                        <td><a href="/contact-list/edit/<%= ContactList[count]._id %>" class="contactBtns">Edit</a></td>
-                        <td><a href="/contact-list/delete/<%= ContactList[count]._id %>" class="contactBtns">Delete</a></td>
+                        <% if(typeof displayName == 'string' && displayName) { %>
+                            <td><a href="/contact-list/edit/<%= ContactList[count]._id %>" class="contactBtns">Edit</a></td>
+                            <td><a href="/contact-list/delete/<%= ContactList[count]._id %>" class="contactBtns">Delete</a></td>
+                        <% } %>
                     </tr>
                 <% } %>
             </table>

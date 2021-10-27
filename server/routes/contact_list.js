@@ -2,6 +2,8 @@ let express = require('express')
 let router = express.Router();
 let mongoose = require('mongoose');
 
+let passport = require('passport')
+
 //Helper function for guard purposes
 function requireAuth(req, res, next){
     //Check if the user is logged in
@@ -10,9 +12,6 @@ function requireAuth(req, res, next){
     }
     next();
 }
-
-//Connect to user model
-let Contact_List = require('../models/contact_list');
 
 let contactController = require('../controllers/contact_list');
 

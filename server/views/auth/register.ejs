@@ -10,7 +10,7 @@
 <% } %>
 
 <div> 
-    <h1>Please Login</h1>
+    <h1>Please Register</h1>
     <form method="POST" autocomplete="off">
         <fieldset>
             <label for="username">UserName: </label>
@@ -24,12 +24,24 @@
             <input type="password"
             name="password" placeholder="Enter password"
             id="password" required>
-            or 
-            <a href="/register">Register Here</a>
         <fieldset>
 
         <fieldset>
-            <input type="submit" value="Login" class="contactBtns">
+            <label for="email">Email: </label>
+            <input type="email"
+            name="email" placeholder="Enter Email Address"
+            id="email" required>
+        <fieldset>
+
+        <fieldset>
+            <label for="displayName">Display Name: </label>
+            <input type="text"
+            name="displayName" placeholder="Enter Display Name"
+            id="displayName" required>
+        <fieldset>
+
+        <fieldset>
+            <input type="submit" value="Register" class="contactBtns">
             <a href="/">
                 <input type="button" value="Cancel" class="contactBtns">
             </a>
