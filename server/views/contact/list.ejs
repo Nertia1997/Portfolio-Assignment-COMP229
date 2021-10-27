@@ -6,7 +6,7 @@
         <div>
             <h1><%= title %></h1>
             <br>
-            <table>
+            <table id="contactList">
                 <tr>
                     <th>Contact Name</th>
                     <th>Contact Number</th>
@@ -18,9 +18,9 @@
                 <!-- Repeatable Template Row -->
                 <% for(let count = 0; count < ContactList.length; count++) { %>
                     <tr>
-                        <td class="text-center"><%= ContactList[count].contact_name %></td>
-                        <td class="text-center"><%= ContactList[count].contact_number %></td>
-                        <td class="text-center"><%= ContactList[count].email %></td>
+                        <td><%= ContactList[count].contact_name %></td>
+                        <td><%= ContactList[count].contact_number %></td>
+                        <td><%= ContactList[count].email %></td>
                         <td><a href="/contact-list/edit/<%= ContactList[count]._id %>" class="contactBtns">Edit</a></td>
                         <td><a href="/contact-list/delete/<%= ContactList[count]._id %>" class="contactBtns">Delete</a></td>
                     </tr>

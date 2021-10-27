@@ -2,71 +2,30 @@ let express = require('express')
 let router = express.Router();
 let mongoose = require('mongoose');
 
+//Helper function for guard purposes
+function requireAuth(req, res, next){
+    //Check if the user is logged in
+    if(!req.isAuthenticated()){
+        return res.redirect('/login')
+    }
+    next();
+}
+
 //Connect to user model
 let Contact_List = require('../models/contact_list');
 
+let contactController = require('../controllers/contact_list');
+
 //Get Route for the user list page
-router.get('/', (req, res, next) => {
-    Contact_List.find((err, contactList) => {
-        if(err){
-            return console.error(err);
-        }
-        else{
-            res.render('contact/list', {title: 'Contact List', ContactList: contactList});
-        }
-    });
-});
+router.get('/', contactController.displayContactList);
 
 //GET Route for displaying the Edit page - UPDATE Operation
-router.get('/edit/:id', (req, res, next) => {
-    let id = req.params.id;
-
-    Contact_List.findById(id, (err, contactToEdit) => {
-        if(err){
-            console.log(err);
-            res.end(err);
-        }
-        else{
-            res.render('contact/edit', {title: 'Edit Contact List', contact: contactToEdit});
-        }
-    });
-});
+router.get('/edit/:id', requireAuth, contactController.displayEditPage);
 
 //POST Route for processing the Edit page - Update Operation
-router.post('/edit/:id', (req, res, next) => {
-    let id = req.params.id;
-
-    let updatedContactList = Contact_List({
-        "_id": id,
-        "email": req.body.email,
-        "contact_name": req.body.contact_name,
-        "contact_number": req.body.contact_number
-    });
-
-    Contact_List.updateOne({_id: id}, updatedContactList, (err) => {
-        if(err){
-            console.log(err);
-            res.end(err);
-        }
-        else{
-            res.redirect('/contact-list')
-        }
-    });
-});
+router.post('/edit/:id', requireAuth, contactController.ProcessEditPage);
 
 //Get to perform Deletion - DELETE Operation
-router.get('/delete/:id', (req, res, next) => {
-    let id = req.params.id;
-
-    Contact_List.remove({_id: id}, (err) => {
-        if(err){
-            console.log(err);
-            res.end(err);
-        }
-        else{
-            res.redirect('/contact-list')
-        }
-    });
-});
+router.get('/delete/:id', requireAuth, contactController.performDelete);
 
 module.exports = router;

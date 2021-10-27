@@ -1,5 +1,6 @@
 let mongoose = require('mongoose');
 
+let database = mongoose.conecction
 //Create a model class
 let contactModel = mongoose.Schema({
     username: String,

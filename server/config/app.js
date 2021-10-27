@@ -5,6 +5,13 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
+//Modules for authentication
+let session = require('express-session')
+let passport = require('passport');
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal.Strategy
+let flash = require('connect-flash');
+
 //Database setup
 let mongoose = require('mongoose');
 let DB = require('./db');
@@ -34,6 +41,30 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
+
+//Setup express session 
+app.use(session({
+  secret: "SomeSecret",
+  saveUninitialized: false,
+  resave: false
+}));
+
+//Initalize Flash
+app.use(flash());
+
+//Intalize Passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+//Passport User Configuration
+
+//Create a user model instance
+let userModel = require('../models/user');
+let User = userModel.User;
+
+//Serialize and deserialize user info
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 //Question 3 C), all routes will be referenced here from the indexRouter (index.js file in routes folder) to route all site pages.
 app.use('/', indexRouter);

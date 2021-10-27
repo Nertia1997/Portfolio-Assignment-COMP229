@@ -1,29 +1,30 @@
 let express = require('express');
 let router = express.Router();
 
+let indexController = require('../controllers/index');
+
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home Page' });
-});
+router.get('/', indexController.displayHomePage);
 
 //Route for the About Me Page
-router.get('/aboutMe', function(req, rest, next){
-  rest.render('aboutMe', {title: 'About Nicholas Harris'})
-});
+router.get('/aboutMe', indexController.displayAboutPage);
 
 //Route for the Projects Page
-router.get('/projects', function(req, rest, next){
-  rest.render('projects', {title: 'Projects'})
-});
+router.get('/projects', indexController.displayProjectsPage);
 
 //Route for the Services Page
-router.get('/services', function(req, rest, next){
-  rest.render('services', {title: 'Available Services'})
-});
+router.get('/services', indexController.displayServicesPage);
 
 //Route for the Contact Page
-router.get('/contact', function(req, rest, next){
-  rest.render('contact', {title: 'Contact Me'})
-});
+router.get('/contact', indexController.displayContactPage);
+
+//Route for Login Page
+router.get('/login', indexController.displayLoginPage);
+
+//Route for Processing Login Page
+router.get('/login', indexController.processLoginPage);
+
+//Route for performing UserLogout
+router.get('/logout', indexController.performLogout);
 
 module.exports = router;
