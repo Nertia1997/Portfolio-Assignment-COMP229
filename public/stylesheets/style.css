@@ -46,3 +46,12 @@ input:invalid{
 #bold{
   font-weight: bold;
 }
+
+.container{
+  text-align: center;
+}
+
+#cancelBtn{
+  text-decoration: none;
+  color: black;
+}

@@ -1,14 +1,5 @@
 <%- include partials/main_nav.ejs %>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content="en-us" http-equiv="Content Language" />
-    <meta content="text/html; charset-utf-8" http-equiv="Content-Type" />
-    <meta content="COMP229, Assignment#1, Nicholas Harris, Web Development, HTML, CSS, JavaScript, EJS, Express, Node.JS, JSON" name="keywords" />
-    <meta content="This is a page for my projects" name="description" /> 
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+<%- include ./partials/header.ejs %>
   <body>
     <div id="allPage">
       <h1><%= title %></h1>
@@ -23,4 +14,4 @@
         <img src="/images/SRS.png" alt="Software Requirements Specification" title="SRS" width="75%" height="75%" />
     </div>
   </body>
-</html>
+<%- include ./partials/footer.ejs %>

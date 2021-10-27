@@ -1,14 +1,5 @@
 <%- include partials/main_nav.ejs %>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content="en-us" http-equiv="Content Language" />
-    <meta content="text/html; charset-utf-8" http-equiv="Content-Type" />
-    <meta content="COMP229, Assignment#1, Nicholas Harris, Web Development, HTML, CSS, JavaScript, EJS, Express, Node.JS, JSON" name="keywords" />
-    <meta content="This is a contact form." name="description" /> 
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+<%- include ./partials/header.ejs %>
   <body onload="">
     <div id="allPage">
       <div id="style">
@@ -59,6 +50,5 @@
       </div>
       <br />
     </div>
-    <script src="/javascripts/assignment1.js"></script>
   </body>
-</html>
+<%- include ./partials/footer.ejs %>

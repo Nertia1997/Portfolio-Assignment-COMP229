@@ -1,0 +1,44 @@
+<%- include ../partials/main_nav.ejs %>
+<%- include ../partials/header.ejs %>
+<!-- Content for the Edit Page -->
+<div class="container">
+    <div>
+        <div>
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <div>
+                    <label for="contactNameField">Contact Name</label>
+                    <input type="text"
+                    id="contactNameField"
+                    placeholder="Enter the new contact name"
+                    name="contact_name"
+                    value="<%= contact.contact_name %>"
+                    required>
+                </div>
+
+                <div>
+                    <label for="contactNumberField">Contact Number</label>
+                    <input type="text"
+                    id="contactNumberField"
+                    placeholder="Enter the new contact number: xxx-xxxx"
+                    name="contact_number"
+                    value="<%= contact.contact_number %>"
+                    required>
+                </div>
+                <div>
+                    <label for="emailField">Email Address</label>
+                    <input type="text"
+                    id="emailField"
+                    placeholder="Enter the new email: name@site.domain"
+                    name="email"
+                    value="<%= contact.email %>"
+                    required>
+                </div>
+
+                <button type="submit">Submit</button>
+                <button><a href="/contact-list" id="cancelBtn">Cancel</a></button>
+            </form>
+        </div>
+    </div>
+</div>                
