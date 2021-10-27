@@ -1,5 +1,4 @@
-<%# This is the ejs view template for my home page. %>
-<%# Created by Nicholas Harris #301161378 for COMP229 %>
+<%- include partials/main_nav.ejs %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,28 +11,6 @@
   </head>
   <body>
     <div id="allPage">
-      <table> <%# Question 1 A) This table operates as my Navigation bar between pages. %>
-        <tr>
-          <td colspan="2">
-            <img src="/images/Sylvoon.jpg" alt="Website Logo" title="Website Logo" id="logo">
-          </td>
-          <td colspan="2">
-            <h2><a href="/">Home</a><h2>
-          </td>
-          <td colspan="2">
-            <h2><a href="/projects">Projects</a><h2>
-          </td>
-          <td colspan="2">
-            <h2><a href="/services">Services</a><h2>
-          </td>
-          <td colspan="2">
-            <h2><a href="/aboutMe">About Me</a><h2>
-          </td>
-          <td colspan="2">
-            <h2><a href="/contact">Contact Me</a><h2>
-          </td>
-        </tr>
-      </table>
       <h1><%= title %></h1>
       <p>Welcome to my portfolio! My name is Nicholas Harris, I am a software engineering student and to learn more about me, click the "About Me" link in the navigation bar above!</p>
       <br>

@@ -1,0 +1,15 @@
+let mongoose = require('mongoose');
+
+//Create a model class
+let contactModel = mongoose.Schema({
+    username: String,
+    password: String,
+    email: String,
+    contact_name: String,
+    contact_number: String
+},
+{
+    collection: "users"
+});
+
+module.exports = mongoose.model('contact_list', contactModel);

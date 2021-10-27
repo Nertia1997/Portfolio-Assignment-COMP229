@@ -21,6 +21,7 @@ mongoDB.once('open', ()=> {
 //These are what setup our routes to be used for the web pages.
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
+let contactRouter = require('../routes/contact_list');
 
 let app = express();
 
@@ -32,7 +33,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../../public')));
 
 //Question 3 C), all routes will be referenced here from the indexRouter (index.js file in routes folder) to route all site pages.
 app.use('/', indexRouter);
@@ -41,6 +42,7 @@ app.use('/aboutMe', indexRouter);
 app.use('/projects', indexRouter);
 app.use('/services', indexRouter);
 app.use('/contact', indexRouter);
+app.use('/contact-list', contactRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
