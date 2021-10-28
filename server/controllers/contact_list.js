@@ -25,7 +25,7 @@ module.exports.displayEditPage = (req, res, next) => {
             res.end(err);
         }
         else{
-            res.render('contact/edit', {title: 'Edit Contact List', contact: contactToEdit});
+            res.render('contact/edit', {title: 'Edit Contact List', contact: contactToEdit, displayName: req.user ? req.user.displayName: ''});
         }
     });
 }

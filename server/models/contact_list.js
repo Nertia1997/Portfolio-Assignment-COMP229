@@ -1,6 +1,5 @@
 let mongoose = require('mongoose');
 
-let database = mongoose.conecction
 //Create a model class
 let contactModel = mongoose.Schema({
     username: String,
@@ -10,7 +9,7 @@ let contactModel = mongoose.Schema({
     contact_number: String
 },
 {
-    collection: "users"
+    collection: "contacts"
 });
 
 module.exports = mongoose.model('contact_list', contactModel);

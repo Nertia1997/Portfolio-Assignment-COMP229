@@ -22,13 +22,13 @@ router.get('/contact', indexController.displayContactPage);
 router.get('/login', indexController.displayLoginPage);
 
 //Route for Processing Login Page
-router.get('/login', indexController.processLoginPage);
+router.post('/login', indexController.processLoginPage);
 
 //Route for Register Page
 router.get('/register', indexController.displayRegisterPage);
 
 //Route for processing register page
-router.get('/register', indexController.processRegisterPage);
+router.post('/register', indexController.processRegisterPage);
 
 //Route for performing UserLogout
 router.get('/logout', indexController.performLogout);

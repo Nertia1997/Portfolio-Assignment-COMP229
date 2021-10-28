@@ -6,10 +6,10 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
 //Modules for authentication
-let session = require('express-session')
+let session = require('express-session');
 let passport = require('passport');
 let passportLocal = require('passport-local');
-let localStrategy = passportLocal.Strategy
+let localStrategy = passportLocal.Strategy;
 let flash = require('connect-flash');
 
 //Database setup
@@ -21,9 +21,9 @@ mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 let mongoDB = mongoose.connection;
 mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
-mongoDB.once('open', ()=> {
+mongoDB.once('open', () => {
   console.log('Connected to MongoDB...');
-})
+});
 
 //These are what setup our routes to be used for the web pages.
 let indexRouter = require('../routes/index');
@@ -41,13 +41,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
+app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 //Setup express session 
 app.use(session({
   secret: "SomeSecret",
   saveUninitialized: false,
   resave: false
-}));
+}))
 
 //Initalize Flash
 app.use(flash());
@@ -67,7 +68,7 @@ passport.use(User.createStrategy());
 
 //Serialize and deserialize user info
 passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+passport.deserializeUser(User.deserializeUser()); 
 
 //Question 3 C), all routes will be referenced here from the indexRouter (index.js file in routes folder) to route all site pages.
 app.use('/', indexRouter);
